@@ -10,6 +10,7 @@ namespace TesteWeb.Models
     {
         [Display(Name = "Nome do usuário")]
         [Required(ErrorMessage = "O nome é obrigatório")]
+        [RegularExpression(@"[a-zA-Z]+", ErrorMessage = "Somente letras")]
         public string NomeUsuario { get; set; }
 
         [Display(Name = "Idade do usuário")]
@@ -25,11 +26,13 @@ namespace TesteWeb.Models
         public string Email { get; set; }
 
         [Display(Name = "Crie seu login")]
-        [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Somente letras e números de 5 a 15 caracteres")]
+        [RegularExpression(@"[a-zA-Z0-9]{5,15}", ErrorMessage = "Somente letras e números de 5 a 15 caracteres")]
         public string Login { get; set; }
 
         [Display(Name = "Crie sua senha")]
         [Required(ErrorMessage = "Senha obrigatório")]
+        [RegularExpression(@"[a-zA-Z0-9]{5,}", ErrorMessage = "No mínimo 5 caracteres")]
+
         public string Senha { get; set; }
 
         [Display(Name = "Confirmar senha")]
