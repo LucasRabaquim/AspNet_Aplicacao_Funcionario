@@ -31,7 +31,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Projeto Levi e Lucas</p>
+            <p>&copy; @DateTime.Now.Year - Projeto Levi e Lucas <br> Todos os direitos reservados.</p>
         </footer>
     </div>
 
@@ -40,3 +40,11 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<style>
+    footer{
+        background:#e8e8e8;
+        color:#131313;
+        text-align:center;
+        border-radius:999px;
+    }
+</style>
